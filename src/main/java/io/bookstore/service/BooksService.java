@@ -26,4 +26,15 @@ public class BooksService {
 		booksRepository.save(books);
 		return new Response("new book added successfully", 200, books);
 	}
+	
+	public Response updateBook(int bookId, BooksDto booksDto) {
+		Books books = modelMapper.map(booksDto, Books.class);
+		booksRepository.save(books);
+		return new Response("updated book successfully", 200, books);
+	}
+	
+	public Response deleteBook(int bookId) {
+		return new Response("book deleted", 200, booksRepository.deleteById(bookId));
+	
+	}
 }
