@@ -15,4 +15,6 @@ import io.bookstore.utility.UsersException;
 			Response res = new Response(usersException.getMessage(), 400, null);
 			return new ResponseEntity<>(res, HttpStatus.BAD_REQUEST);
 		}
+		
+		
 }
