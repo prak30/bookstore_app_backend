@@ -1,5 +1,7 @@
 package io.bookstore.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,7 @@ public class BooksController {
 		return new ResponseEntity<Response>(response,HttpStatus.OK);
 	}
 	@PostMapping("/addbook")
-	public ResponseEntity<Response> addBook(@RequestBody BooksDto booksDto){
+	public ResponseEntity<Response> addBook(@Valid @RequestBody BooksDto booksDto){
 		Response response = booksService.addBook(booksDto);
 		return new ResponseEntity<Response>(response, HttpStatus.OK);
 	}
