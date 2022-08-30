@@ -1,6 +1,7 @@
 package io.bookstore.dto;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,4 +19,7 @@ public class BooksDto {
 	private String bookAuthor;
 	@NotBlank
 	private String bookDescription;
+	private Integer price;
+	private Integer quantity;
+
 }
