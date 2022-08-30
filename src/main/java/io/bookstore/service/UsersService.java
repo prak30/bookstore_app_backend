@@ -1,5 +1,8 @@
 package io.bookstore.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 
 import io.bookstore.dto.UsersDto;
+import io.bookstore.model.Books;
 import io.bookstore.model.Users;
+import io.bookstore.repository.BooksRepository;
 import io.bookstore.repository.UsersRepository;
 import io.bookstore.utility.Response;
 
@@ -15,6 +20,8 @@ import io.bookstore.utility.Response;
 public class UsersService {
 	@Autowired
 	private UsersRepository usersRepository;
+	@Autowired
+	private BooksRepository booksRepository;
 	@Autowired
 	private ModelMapper modelMapper;
 	
@@ -38,5 +45,6 @@ public class UsersService {
 		return new Response("user deleted", 200, usersRepository.deleteById(userId));
 	
 	}
+	
 
 }

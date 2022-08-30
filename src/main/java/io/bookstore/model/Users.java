@@ -2,6 +2,7 @@ package io.bookstore.model;
 
 
 import java.util.LinkedList;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,6 +18,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 public class Users {
@@ -29,4 +32,6 @@ public class Users {
 	private String password;
 	@OneToMany
 	private List<Books> cartBook = new LinkedList<>();
+	
+	
 }
